@@ -6,7 +6,6 @@ define xrootd::create_systemd (
   $enable_hdfs = false,
   $java_home = undef,
 ) {
-  require xrootd::service
 
   file {"/etc/systemd/system/${title}.service.d/":
     ensure => directory,
