@@ -17,11 +17,6 @@ class xrootd::config (
     unless  => "ls ${grid_security}/certificates/*.r0"
   }
   
-  group { $xrootd_group: } ->
-  user { $xrootd_user: 
-    gid => $xrootd_group,
-  }
-  
   File {
     owner  => $xrootd_user,
     group  => $xrootd_group,
