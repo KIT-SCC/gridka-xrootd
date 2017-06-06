@@ -4,8 +4,8 @@ define xrootd::create_digauthfile (
 ) {
   require xrootd::config
 
-  file {$title:
-    content => template($xrootd::config::digauthfile_template)
+  file { $title:
+    content => template("xrootd/digauthfile.erb")
   }
 
 }

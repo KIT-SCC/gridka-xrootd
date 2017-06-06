@@ -6,7 +6,7 @@ define xrootd::create_config (
   require xrootd::config
   
   file {$title:
-    content => template($xrootd::config::configfile_template)
+    content => template("xrootd/xrootd.cfg.erb")
   }
 
 }

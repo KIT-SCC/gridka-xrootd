@@ -3,8 +3,8 @@ define xrootd::create_authfile (
 ) {
   require xrootd::config
   
-  file {$title:
-    content => template($xrootd::config::authfile_template)
+  file { $title:
+    content => template("xrootd/authfile_generic.erb")
   }
 
 }

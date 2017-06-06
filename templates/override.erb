@@ -1,6 +1,6 @@
 [Service]
-User= <%= @xrootd_user %>
-Group= <%= @xrootd_group %>
+User= <%= @xrootd_user_name %>
+Group= <%= @xrootd_group_name %>
 
 <% if @exports -%>
   <%- @exports.sort.each do |key,val| -%>

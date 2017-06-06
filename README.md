@@ -23,8 +23,13 @@ There is _no_ support for any kind of plugin management with this module.
 Used to create Puppet Service resource types for all the xrootd and cmsd
 instances with EL7 installations (_work-in-progress_).
 
+* `xrootd::config::xrootd_user_name`, -`xrootd_group_name`:
+Sets the (human readable) name for the xrootd user and group resources.
 * `xrootd::config::xrootd_user`, -`xrootd_group`:
-Defines user and group name for the xrootd service.
+Define `user` and `group` Puppet resource types. This module will attempt to
+ensure the correct user and group configuration. In case these resources
+have to be managed outside of this module, simply assign an empty hash (`{}`)
+as value.
 * `xrootd::config::configdir`:
 The directory where xrootd will find its configuration files.
 * `xrootd::config::logdir`:

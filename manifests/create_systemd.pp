@@ -1,6 +1,6 @@
 define xrootd::create_systemd (
-  $xrootd_user = $xrootd::config::xrootd_user,
-  $xrootd_group = $xrootd::config::xrootd_group,
+  $xrootd_user_name = $xrootd::config::xrootd_user_name,
+  $xrootd_group_name = $xrootd::config::xrootd_group_name,
   $exports = $xrootd::params::exports,
   $daemon_corefile_limit = $xrootd::params::daemon_corefile_limit,
   $enable_hdfs = false,

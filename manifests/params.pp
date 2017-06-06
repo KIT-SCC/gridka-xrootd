@@ -1,19 +1,12 @@
 class xrootd::params {
-  $xrootd_user = "xrootd"
-  $xrootd_group = "xrootd"
+  $xrootd_user_name = 'xrootd'
+  $xrootd_user = { gid => 'xrootd' }
+  $xrootd_group_name = 'xrootd'
+  $xrootd_group = { ensure => 'present' }
   $configdir = "/etc/xrootd"
   $logdir = "/var/log/xrootd"
   $spooldir = "/var/spool/xrootd"
   $all_pidpath = "/var/run/xrootd"
-  
-  #$sysconfigfile = "/etc/sysconfig/xrootd"
-  $sysconfigfile_template = "xrootd/sysconfig.erb"
-  #$configfile = "${configdir}/xrootd.cfg"
-  $configfile_template = "xrootd/xrootd.cfg.erb"
-  #$authfile = "${configdir}/auth_file"
-  $authfile_template = "xrootd/authfile_generic.erb"
-  #$digauthfile = "${configdir}/digauth.cfg"
-  $digauthfile_template = "xrootd/digauthfile.erb"
   
   # Unlike the other *_instances_options, this is an array of hashes.
   $xrootd_instances_options = [ {"default" => "-l ${logdir}/xrootd.log -c ${configdir}/xrootd-clustered.cfg -k fifo"} ]

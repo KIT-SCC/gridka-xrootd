@@ -1,6 +1,6 @@
 define xrootd::create_sysconfig (
-  $xrootd_user = $xrootd::config::xrootd_user,
-  $xrootd_group = $xrootd::config::xrootd_group,
+  $xrootd_user_name = $xrootd::config::xrootd_user_name,
+  $xrootd_group_name = $xrootd::config::xrootd_group_name,
   $xrootd_instances_options = $xrootd::params::xrootd_instances_options,
   $cmsd_instances_options = $xrootd::params::cmsd_instances_options,
   $purd_instances_options = $xrootd::params::purd_instances_options,
@@ -14,8 +14,8 @@ define xrootd::create_sysconfig (
 ) {
   require xrootd::config
 
-  file {$title:
-    content => template($xrootd::params::sysconfigfile_template)
+  file { $title:
+    content => template("xrootd/sysconfig.erb")
   }
 
 }
