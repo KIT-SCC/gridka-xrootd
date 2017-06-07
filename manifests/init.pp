@@ -1,15 +1,3 @@
-# == Class: xrootd
-#
-# Refer to the README for detailed documentation.
-#
-# === Authors
-#
-# CERN DPM <dpm-devel@cern.ch>
-#
-# === Copyright
-#
-# Copyright 2012 CERN, unless otherwise noted.
-#
 class xrootd (
   $xrootd_instances = undef,
   $cmsd_instances = undef,

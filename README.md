@@ -1,8 +1,7 @@
-# puppet-xrootd module
-[![Puppet Forge](http://img.shields.io/puppetforge/v/lcgdm/xrootd.svg)](https://forge.puppetlabs.com/lcgdm/xrootd)
-[![Build Status](https://travis-ci.org/cern-it-sdc-id/puppet-xrootd.svg?branch=master)]([https://travis-ci.org/cern-it-sdc-id/puppet-xrootd.svg)
-
-This is the puppet-xrootd module, it configures the Xrootd server and it's a dependency for the configuration of Data Management components developed at CERN , IT-SDC-ID section
+# gridka-xrootd module
+This is the gridka-xrootd module, which originated from 
+cern-it-sdc-id/puppet-xrootd. The fork was done to introduce extensive changes
+regarding the configuration workflow.
 
 ### Usage
 
