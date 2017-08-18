@@ -110,14 +110,11 @@ All of which have been explained before at least nonce.
 This module does _not_ ensure that the xrootd package for installation can
 be found. Administrators have to prepare the environment appropriately!
 
-This module has a build-in dependency on a Puppet module 'fetchcrl',
-which administrators must ensure is defined.
+This module requires that a class 'fetchcrl' has been declared in the Puppet catalogue.
 
 ### License
 ASL 2.0
 
 ### Contact
-Andrea Manzi <andrea.manzi@cern.ch>
-
-## Support
-Tickets and issues at our [cern-it-sdc-id site](https://github.com/cern-it-sdc-id)
+(maintainer for this repository) Xavier Mol <xavier.mol@kit.edu>  
+(original author) Andrea Manzi <andrea.manzi@cern.ch>
