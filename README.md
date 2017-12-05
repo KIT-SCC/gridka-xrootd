@@ -14,6 +14,14 @@ for the confiruation management. There are five additional resource types
 defined, which may be utilised to generate more sophisticated configuration
 files (see [Resource types](#resource-types)).
 
+Those that are experienced Puppet users might notice that the module's base
+class does not provide many parameters. In particular, none that have any
+effect on the other classes provided. That is because we as the editors
+of the forked code have Puppet Hiera in action and Puppet
+will look up values for all class parameters there automatically. Hence,
+we don't need those parameters. In case you do, simply apply the classes
+directly, in the same fashion as the `xrootd` base class does it.
+
 There is _no_ support for any kind of plugin management with this module.
 
 #### Parameters
