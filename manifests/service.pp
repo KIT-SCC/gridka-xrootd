@@ -5,7 +5,7 @@ class xrootd::service (
   $key	= $xrootd::params::key,
 ) inherits xrootd::params {
 
-  exec {'systemctl-daemon-reload':
+  exec {'systemctl-daemon-reload-xrootd':
     command     => '/usr/bin/systemctl daemon-reload',
     refreshonly => true,
   }
