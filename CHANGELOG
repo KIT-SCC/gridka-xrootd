@@ -1,3 +1,5 @@
+2018-10-16 Xavier Mol <xavier.mol@kit.edu>
+  * Drop dependency on fetchcrl -- ref issue #4
 2016-10-31 Xavier Mol <xavier.mol@kit.edu>
   * Make the module agnostic towards the numerous xrootd parameters.
 2016-08-23 Andrea Manzi  <andrea.manzi@cern.ch>

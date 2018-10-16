@@ -10,13 +10,6 @@ class xrootd::config (
   $grid_security = $xrootd::params::grid_security,
 ) inherits xrootd::params {
   
-  exec {'run-fetchcrl-atleastonce':
-    path    => '/bin:/usr/bin:/sbin:/usr/sbin',
-    command => 'fetch-crl',
-    unless  => "ls -U ${grid_security}/certificates/*.r0",
-    require => Class['fetchcrl'],
-  }
-  
   ensure_resource('group', $xrootd_group_name, $xrootd_group)
   ensure_resource('user', $xrootd_user_name, $xrootd_user)
   
@@ -24,7 +17,7 @@ class xrootd::config (
     owner  => $xrootd_user_name,
     group  => $xrootd_group_name,
   }
-
+  
   file { [$configdir, $logdir, $spooldir, $all_pidpath]:
     ensure => directory,
   }

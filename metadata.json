@@ -2,22 +2,18 @@
   "author": "puppet",
   "dependencies": [
     {
-      "name": "puppet/fetchcrl",
-      "version_requirement": "\u003e\u003d 1.1.1"
-    },
-    {
       "name": "puppetlabs/stdlib",
       "version_requirement": "\u003e\u003d 2.0.0"
     }
   ],
-  "description": "This module installs and configure a xrootd server",
+  "description": "This module installs and configures a xrootd server",
   "license": "Apache License, Version 2.0",
-  "name": "lcgdm-xrootd",
-  "operatingsystem_support": [],
-  "project_page": "https://svnweb.cern.ch/trac/lcgdm",
+  "name": "gridka-xrootd",
+  "operatingsystem_support": [ "Scientific Linux 6", "CentOS7"],
+  "project_page": "http://www.gridka.de",
   "requirements": [],
-  "source": "https://github.com/cern-it-sdc-id/puppet-xrootd",
-  "summary": "This module installs and configure a xrootd server",
+  "source": "https://github.com/KIT-SCC/gridka-xrootd",
+  "summary": "This module installs and configures a xrootd server",
   "tags": [],
-  "version": "0.2.3"
+  "version": "0.3.0"
 }

@@ -118,8 +118,6 @@ All of which have been explained before at least nonce.
 This module does _not_ ensure that the xrootd package for installation can
 be found. Administrators have to prepare the environment appropriately!
 
-This module requires that a class 'fetchcrl' has been declared in the Puppet catalogue.
-
 ### License
 ASL 2.0
 
