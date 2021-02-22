@@ -1,22 +1,24 @@
 class xrootd::service (
   $xrootd_instances,
   $cmsd_instances,
-  $certificate = $xrootd::params::certificate,
-  $key	= $xrootd::params::key,
-) inherits xrootd::params {
+  Stdlib::Unixpath $grid_security,
+  Stdlib::Unixpath $certificate = "${grid_security}/hostcert.pem",
+  Stdlib::Unixpath $key = "${grid_security}/hostkey.pem",
+) {
 
-  exec {'systemctl-daemon-reload-xrootd':
-    command     => '/usr/bin/systemctl daemon-reload',
-    refreshonly => true,
-  }
-  
+  include systemd::systemctl::daemon_reload
+
   Service {
-    ensure    => running,
+    ensure    => 'running',
     enable    => true,
-    subscribe => File[$certificate,$key],
+    subscribe => File[$certificate, $key],
+    notify    => Class['systemd::systemctl::daemon_reload']
   }
 
-  if $::osfamily == 'RedHat' and ($::operatingsystemmajrelease + 0) >= 7 { 
+  unless $::os['family'] == 'RedHat' and ($::os['release']['major'] + 0) >= 6 {
+    fail('The service can be managed for RedHat OSes only!')
+  }
+
     if $xrootd_instances == undef {
       fail("xrootd_instances parameter should not be empty")
     }
@@ -25,21 +27,12 @@ class xrootd::service (
         provider  => systemd,
       }
     }
-    
+
     if $cmsd_instances != undef {
       service {$cmsd_instances:
         provider  => systemd,
         require   => Service[$xrootd_instances],
       }
-    }
-  }
-  
-  else {
-    # Start the services
-    service {'xrootd': }
-    
-    service {'cmsd':
-      require   => Service['xrootd'],
     }
   }
 }
